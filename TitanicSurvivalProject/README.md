@@ -1,55 +1,58 @@
 # Titanic Survival Prediction
 
-A complete internship-ready data science project for predicting Titanic survival using Python.
-
-## Project Overview
-
-This project demonstrates the end-to-end data science workflow:
+This is a complete Data Science internship project that predicts Titanic survival using a real-world dataset.
+It demonstrates the full end-to-end workflow:
 - Data collection and dataset understanding
 - Data cleaning and preprocessing
 - Exploratory data analysis (EDA)
-- Data visualization
-- Predictive modeling with Logistic Regression
+- Data visualization with Matplotlib and Seaborn
+- Predictive modeling with Scikit-Learn
 - Model evaluation and reporting
 
 ## Project Structure
 
 ```
 TitanicSurvivalProject/
-├── Titanic-Dataset.csv       # Titanic dataset (place your CSV here)
-├── titanic_survival.py       # Main Python analysis script
-├── requirements.txt         # Required Python packages
-├── README.md                # Documentation
-├── .gitignore               # Git ignore rules
-├── survival_count.png       # Generated visualizations
-├── gender_distribution.png
-├── age_distribution.png
-├── class_distribution.png
-├── survival_by_gender_pie.png
-├── correlation_heatmap.png
-└── confusion_matrix.png
+├── data/
+│   └── Titanic-Dataset.csv        # Titanic dataset CSV generated or loaded from seaborn
+├── output/
+│   ├── accuracy_report.txt        # Saved model report and metrics
+│   ├── class_distribution.png
+│   ├── confusion_matrix.png
+│   ├── correlation_heatmap.png
+│   ├── gender_distribution.png
+│   ├── age_distribution.png
+│   ├── survival_by_gender_pie.png
+│   └── survival_count.png
+├── titanic_survival.py            # Main analysis script
+├── requirements.txt               # Python dependencies
+├── README.md                      # Project documentation
+└── .gitignore                     # Git ignore rules
 ```
 
-## Dataset Requirements
+## Dataset
 
-- Download the Titanic dataset CSV file and place it in the `TitanicSurvivalProject` folder.
-- Name the file: `Titanic-Dataset.csv`
+- The project uses the Titanic dataset.
+- If `data/Titanic-Dataset.csv` is missing, the script loads the Titanic dataset from `seaborn` and saves it locally.
+- This ensures the project runs without a manual dataset download.
 
 ## Installation
 
-1. Create a virtual environment (recommended):
+1. Create a virtual environment from the project folder:
 ```bash
-python -m venv venv
+python -m venv .venv
 ```
-2. Activate the virtual environment:
-- Windows PowerShell:
+
+2. Activate the environment:
+- PowerShell:
 ```powershell
-venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 ```
-- Windows CMD:
+- CMD:
 ```cmd
-venv\Scripts\activate.bat
+.venv\Scripts\activate.bat
 ```
+
 3. Install dependencies:
 ```bash
 pip install -r requirements.txt
@@ -57,27 +60,45 @@ pip install -r requirements.txt
 
 ## Run the Project
 
+From `TitanicSurvivalProject`:
+
 ```bash
 python titanic_survival.py
 ```
 
-## What the Script Does
+The script will:
+- Load the Titanic dataset
+- Display the first 5 rows, shape, columns, and data types
+- Clean missing values and remove duplicates
+- Perform EDA and print insights
+- Create charts in `output/`
+- Train a Logistic Regression model
+- Save evaluation metrics and plots
 
-1. Loads the Titanic dataset using Pandas.
-2. Displays the first 5 rows, shape, and data types.
-3. Explains each feature in the dataset.
-4. Handles missing values and removes duplicate rows.
-5. Converts categorical values into numeric values.
-6. Calculates summary statistics and survival trends.
-7. Creates visualizations and saves them as PNG files.
-8. Trains a Logistic Regression model and evaluates performance.
+## Sample Outputs
 
-## Results and Conclusions
+- `output/survival_count.png`
+- `output/gender_distribution.png`
+- `output/age_distribution.png`
+- `output/class_distribution.png`
+- `output/survival_by_gender_pie.png`
+- `output/correlation_heatmap.png`
+- `output/confusion_matrix.png`
+- `output/model_report.txt`
 
-- The dataset is processed and cleaned for modeling.
-- Survival rates are analyzed by age, gender, and passenger class.
-- Logistic Regression is used to predict survival.
-- Model accuracy, confusion matrix, and classification report are displayed.
+## Model Results
+
+- The project trains a Logistic Regression model on the Titanic dataset.
+- It prints accuracy and classification metrics to the console.
+- It also saves a confusion matrix and model report to `output/`.
+
+## GitHub Push Commands
+
+```bash
+git add TitanicSurvivalProject/
+git commit -m "Add Titanic Survival Prediction internship project"
+git push origin main
+```
 
 ## Technologies Used
 
@@ -88,10 +109,8 @@ python titanic_survival.py
 - Seaborn
 - scikit-learn
 
-## GitHub Ready
+## Notes
 
-- Professional project structure.
-- Clear code comments and modular sections.
-- `requirements.txt` included.
-- `.gitignore` included.
-- Ready to upload to GitHub for internship submission.
+- The code is fully commented and organized for readability.
+- The dataset is prepared for analysis and modeling.
+- Visualizations include titles, labels, and legends.

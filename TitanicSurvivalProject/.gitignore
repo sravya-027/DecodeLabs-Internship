@@ -15,9 +15,8 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Visualizations and output
-*.png
-*.csv
+# Output folders
+output/
 
 # IDE
 .vscode/
